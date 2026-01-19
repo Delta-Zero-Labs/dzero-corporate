@@ -61,11 +61,11 @@ export const Slide05Patent = ({ slideNumber, totalSlides }: SlideProps) => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="bg-secondary/50 rounded-lg p-3">
                 <p className="text-sm text-muted-foreground">Status</p>
-                <p className="text-foreground font-semibold">Provisional Filed December 2024</p>
+                <p className="text-foreground font-semibold">Provisional Filed December 2025</p>
               </div>
               <div className="bg-secondary/50 rounded-lg p-3">
                 <p className="text-sm text-muted-foreground">Non-Provisional Due</p>
-                <p className="text-foreground font-semibold">December 2025</p>
+                <p className="text-foreground font-semibold">December 2026</p>
               </div>
             </div>
           </motion.div>
