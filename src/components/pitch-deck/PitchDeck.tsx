@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Maximize, Minimize, Download } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize, Minimize, Download, Loader2, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import all slides
@@ -77,6 +77,10 @@ export const PitchDeck = () => {
     }
   }, []);
 
+  const handlePrint = useCallback(() => {
+    window.print();
+  }, []);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -90,12 +94,15 @@ export const PitchDeck = () => {
         toggleFullscreen();
       } else if (e.key === "Escape" && isFullscreen) {
         setIsFullscreen(false);
+      } else if ((e.key === "p" || e.key === "P") && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        handlePrint();
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [goToNext, goToPrev, toggleFullscreen, isFullscreen]);
+  }, [goToNext, goToPrev, toggleFullscreen, isFullscreen, handlePrint]);
 
   // Listen for fullscreen changes
   useEffect(() => {
@@ -112,7 +119,7 @@ export const PitchDeck = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Navigation Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border px-4 py-2">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border px-4 py-2 print:hidden">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -160,8 +167,17 @@ export const PitchDeck = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleFullscreen}
+              onClick={handlePrint}
               className="text-muted-foreground hover:text-foreground ml-2"
+              title="Print / Save as PDF (Ctrl+P)"
+            >
+              <Printer className="w-5 h-5" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleFullscreen}
+              className="text-muted-foreground hover:text-foreground"
             >
               {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5" />}
             </Button>
@@ -170,7 +186,7 @@ export const PitchDeck = () => {
       </div>
 
       {/* Slide Content */}
-      <div className="flex-1 pt-14 overflow-hidden">
+      <div id="slide-content" className="flex-1 pt-14 overflow-hidden print:pt-0">
         <AnimatePresence mode="wait">
           <CurrentSlideComponent
             key={currentSlide}
@@ -181,8 +197,8 @@ export const PitchDeck = () => {
       </div>
 
       {/* Keyboard hints */}
-      <div className="fixed bottom-4 right-4 text-xs text-muted-foreground/50">
-        <span className="hidden md:inline">← → Navigate | F Fullscreen | Space Next</span>
+      <div className="fixed bottom-4 right-4 text-xs text-muted-foreground/50 print:hidden">
+        <span className="hidden md:inline">← → Navigate | F Fullscreen | Ctrl+P Print/PDF | Space Next</span>
       </div>
     </div>
   );
