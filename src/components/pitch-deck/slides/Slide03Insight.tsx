@@ -93,16 +93,16 @@ export const Slide03Insight = ({ slideNumber, totalSlides }: SlideProps) => {
         >
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={comparisonData}>
+              <LineChart data={comparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 40 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis 
                   dataKey="rules" 
                   stroke="hsl(var(--muted-foreground))"
-                  label={{ value: 'Number of Rules', position: 'bottom', fill: 'hsl(var(--muted-foreground))' }}
+                  tick={{ fontSize: 12 }}
                 />
                 <YAxis 
                   stroke="hsl(var(--muted-foreground))"
-                  label={{ value: 'Cost', angle: -90, position: 'left', fill: 'hsl(var(--muted-foreground))' }}
+                  tick={{ fontSize: 12 }}
                 />
                 <Tooltip 
                   contentStyle={{ 
@@ -111,11 +111,10 @@ export const Slide03Insight = ({ slideNumber, totalSlides }: SlideProps) => {
                     borderRadius: '8px'
                   }}
                 />
-                <Legend />
                 <Line 
                   type="monotone" 
                   dataKey="traditional" 
-                  name="Traditional (∂cost/∂rules = linear)"
+                  name="Traditional (∂cost/∂rules = O(M))"
                   stroke="hsl(var(--destructive))" 
                   strokeWidth={3}
                   dot={{ fill: 'hsl(var(--destructive))' }}
@@ -123,7 +122,7 @@ export const Slide03Insight = ({ slideNumber, totalSlides }: SlideProps) => {
                 <Line 
                   type="monotone" 
                   dataKey="dzero" 
-                  name="DZero (∂cost/∂rules ≈ 0)"
+                  name="∂₀ (∂cost/∂rules ≈ 0)"
                   stroke="hsl(var(--accent))" 
                   strokeWidth={3}
                   dot={{ fill: 'hsl(var(--accent))' }}
@@ -131,6 +130,17 @@ export const Slide03Insight = ({ slideNumber, totalSlides }: SlideProps) => {
               </LineChart>
             </ResponsiveContainer>
           </div>
+          <div className="flex justify-center gap-6 mt-4 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-destructive"></div>
+              <span className="text-muted-foreground">Traditional (∂cost/∂rules = O(M))</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-accent"></div>
+              <span className="text-muted-foreground">∂₀ (∂cost/∂rules ≈ 0)</span>
+            </div>
+          </div>
+          <p className="text-center text-muted-foreground text-sm mt-2">Number of Rules</p>
         </motion.div>
 
         {/* Bottom callout */}

@@ -79,7 +79,7 @@ export const Slide02Problem = ({ slideNumber, totalSlides }: SlideProps) => {
             className="bg-card/30 border border-border rounded-xl p-6"
           >
             <h3 className="text-lg font-semibold text-foreground mb-4 text-center">
-              <span className="font-mono text-accent">∂cost/∂rules = constant</span>
+              <span className="font-mono text-accent">∂cost/∂rules = O(M)</span>
               <span className="text-muted-foreground text-sm block mt-1">(Linear Scaling)</span>
             </h3>
             

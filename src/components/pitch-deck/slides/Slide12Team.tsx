@@ -148,14 +148,14 @@ export const Slide12Team = ({ slideNumber, totalSlides }: SlideProps) => {
             <span className="text-accent font-mono text-2xl">∂₀</span> becomes the standard for any system evaluating multiple rules.
           </p>
           <p className="text-foreground">
-            Like <span className="text-accent">SIMD</span> for parallelization, <span className="text-accent">DZero</span> for rule evaluation.
+            Like <span className="text-accent">SIMD</span> for parallelization, <span className="text-accent">∂₀</span> for rule evaluation.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-muted-foreground">
-            <span>📧 [email]</span>
-            <span>📱 [phone]</span>
-            <span>🔗 [LinkedIn]</span>
-            <span>💻 [GitHub]</span>
+            <a href="mailto:mikchaelallenkuykendall@gmail.com" className="hover:text-accent transition-colors">📧 mikchaelallenkuykendall@gmail.com</a>
+            <span>📱 816-835-3920</span>
+            <a href="https://www.linkedin.com/in/makuykendall/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">🔗 LinkedIn</a>
+            <a href="https://github.com/Michael-A-Kuykendall" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">💻 GitHub</a>
           </div>
         </motion.div>
       </div>
