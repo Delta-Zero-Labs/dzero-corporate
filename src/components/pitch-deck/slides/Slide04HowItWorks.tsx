@@ -41,16 +41,16 @@ export const Slide04HowItWorks = ({ slideNumber, totalSlides }: SlideProps) => {
               <h3 className="text-xl font-bold text-foreground">1. Compilation Phase</h3>
             </div>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">→</span>
+              <li className="flex items-center gap-2">
+                <span className="text-accent">→</span>
                 Analyze all rules, extract selectors (e.g., "user.id", "amount")
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">→</span>
-                <strong className="text-foreground">Deduplicate:</strong> All rules checking "user.id" share ONE lookup
+              <li className="flex items-center gap-2">
+                <span className="text-accent">→</span>
+                <span><strong className="text-foreground">Deduplicate:</strong> All rules checking "user.id" share ONE lookup</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">→</span>
+              <li className="flex items-center gap-2">
+                <span className="text-accent">→</span>
                 Generate fused executable with parallel rule state
               </li>
             </ul>
@@ -70,17 +70,17 @@ export const Slide04HowItWorks = ({ slideNumber, totalSlides }: SlideProps) => {
               <h3 className="text-xl font-bold text-foreground">2. Execution Phase</h3>
             </div>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">→</span>
+              <li className="flex items-center gap-2">
+                <span className="text-accent">→</span>
                 Single streaming parse of input data
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">→</span>
+              <li className="flex items-center gap-2">
+                <span className="text-accent">→</span>
                 Broadcast values to all relevant rules simultaneously
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">→</span>
-                <strong className="text-foreground">Early exit</strong> when all rules resolved (often before full parse)
+              <li className="flex items-center gap-2">
+                <span className="text-accent">→</span>
+                <span><strong className="text-foreground">Early exit</strong> when all rules resolved (often before full parse)</span>
               </li>
             </ul>
           </motion.div>
