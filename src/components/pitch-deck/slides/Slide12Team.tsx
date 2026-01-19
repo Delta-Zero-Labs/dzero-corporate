@@ -74,7 +74,7 @@ export const Slide12Team = ({ slideNumber, totalSlides }: SlideProps) => {
               <p className="text-sm font-semibold text-foreground mb-2">Track Record:</p>
               <ul className="space-y-1">
                 {trackRecord.map((item, index) => (
-                  <li key={index} className="text-xs text-muted-foreground flex items-start gap-1">
+                  <li key={index} className="text-xs text-muted-foreground flex items-center gap-1">
                     <span className="text-accent">✓</span> {item}
                   </li>
                 ))}
