@@ -97,104 +97,77 @@ export const Slide11Moat = ({ slideNumber, totalSlides }: SlideProps) => {
           ))}
         </div>
 
-        {/* Visual Moat Diagram - Redesigned */}
+        {/* Cumulative Timeline */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
           className="mt-8 bg-card/30 border border-border rounded-xl p-6"
         >
-          <h3 className="text-center text-foreground font-semibold mb-6">Layered Defense Strategy</h3>
+          <h3 className="text-center text-foreground font-semibold mb-6">Cumulative Replication Barrier</h3>
           
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-            {/* Concentric Rings Diagram */}
-            <div className="relative w-72 h-72 flex-shrink-0">
-              {/* Layer 4: Network Effects (outermost) - Purple */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-600/10 border-4 border-purple-500/40 flex items-center justify-center">
-                {/* Layer 3: Economic - Orange/Accent */}
-                <div className="w-56 h-56 rounded-full bg-gradient-to-br from-accent/25 to-accent/15 border-4 border-accent/50 flex items-center justify-center">
-                  {/* Layer 2: IP Protection - Green */}
-                  <div className="w-40 h-40 rounded-full bg-gradient-to-br from-emerald-500/30 to-emerald-600/20 border-4 border-emerald-500/60 flex items-center justify-center">
-                    {/* Layer 1: Technical (innermost) - Blue */}
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500/40 to-blue-600/30 border-4 border-blue-500/70 flex items-center justify-center">
-                      {/* Core: ∂₀ */}
-                      <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center shadow-lg shadow-accent/30">
-                        <span className="text-xl font-bold text-accent-foreground">∂₀</span>
-                      </div>
-                    </div>
+          {/* Horizontal Timeline */}
+          <div className="flex flex-col items-center">
+            <div className="flex items-center justify-center gap-2 flex-wrap lg:flex-nowrap">
+              {/* Technical */}
+              <div className="flex items-center gap-2">
+                <div className="bg-blue-500/20 border-2 border-blue-500 rounded-lg px-4 py-3 text-center min-w-[140px]">
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <Shield className="w-4 h-4 text-blue-400" />
+                    <span className="text-sm font-semibold text-blue-400">Technical</span>
                   </div>
+                  <span className="text-lg font-bold text-foreground">18-24 mo</span>
                 </div>
+                <span className="text-2xl text-muted-foreground font-light hidden lg:block">→</span>
               </div>
               
-              {/* Positioned Labels with Icons - Clockwise from top */}
-              {/* Top: Network Effects */}
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                <div className="w-8 h-8 rounded-full bg-purple-500/30 border border-purple-500/50 flex items-center justify-center mb-1">
-                  <Rocket className="w-4 h-4 text-purple-400" />
+              {/* Legal/IP */}
+              <div className="flex items-center gap-2">
+                <div className="bg-emerald-500/20 border-2 border-emerald-500 rounded-lg px-4 py-3 text-center min-w-[140px]">
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <Clock className="w-4 h-4 text-emerald-400" />
+                    <span className="text-sm font-semibold text-emerald-400">+ Legal</span>
+                  </div>
+                  <span className="text-lg font-bold text-foreground">3.5 yr</span>
                 </div>
-                <span className="text-xs font-medium text-purple-400 whitespace-nowrap">Network Effects</span>
+                <span className="text-2xl text-muted-foreground font-light hidden lg:block">→</span>
               </div>
               
-              {/* Right: Economic */}
-              <div className="absolute top-1/2 -right-4 -translate-y-1/2 flex items-center gap-1">
-                <div className="w-8 h-8 rounded-full bg-accent/30 border border-accent/50 flex items-center justify-center">
-                  <DollarSign className="w-4 h-4 text-accent" />
+              {/* Economic */}
+              <div className="flex items-center gap-2">
+                <div className="bg-accent/20 border-2 border-accent rounded-lg px-4 py-3 text-center min-w-[140px]">
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <DollarSign className="w-4 h-4 text-accent" />
+                    <span className="text-sm font-semibold text-accent">+ Economic</span>
+                  </div>
+                  <span className="text-lg font-bold text-foreground">Lock-in</span>
                 </div>
-                <span className="text-xs font-medium text-accent whitespace-nowrap">Economic</span>
+                <span className="text-2xl text-muted-foreground font-light hidden lg:block">→</span>
               </div>
               
-              {/* Bottom: IP Protection */}
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                <span className="text-xs font-medium text-emerald-400 whitespace-nowrap mb-1">IP Protection</span>
-                <div className="w-8 h-8 rounded-full bg-emerald-500/30 border border-emerald-500/50 flex items-center justify-center">
-                  <Clock className="w-4 h-4 text-emerald-400" />
-                </div>
-              </div>
-              
-              {/* Left: Technical */}
-              <div className="absolute top-1/2 -left-4 -translate-y-1/2 flex items-center gap-1">
-                <span className="text-xs font-medium text-blue-400 whitespace-nowrap">Technical</span>
-                <div className="w-8 h-8 rounded-full bg-blue-500/30 border border-blue-500/50 flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-blue-400" />
+              {/* Network */}
+              <div className="flex items-center gap-2">
+                <div className="bg-purple-500/20 border-2 border-purple-500 rounded-lg px-4 py-3 text-center min-w-[140px]">
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <Rocket className="w-4 h-4 text-purple-400" />
+                    <span className="text-sm font-semibold text-purple-400">+ Network</span>
+                  </div>
+                  <span className="text-lg font-bold text-foreground">Infrastructure</span>
                 </div>
               </div>
             </div>
             
-            {/* Callout Descriptions */}
-            <div className="flex flex-col gap-3 text-sm max-w-xs">
-              <div className="flex items-start gap-2">
-                <div className="w-3 h-3 rounded-full bg-blue-500 mt-1 flex-shrink-0" />
-                <div>
-                  <span className="font-semibold text-blue-400">Technical:</span>
-                  <span className="text-muted-foreground ml-1">18-24 month replication barrier</span>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="w-3 h-3 rounded-full bg-emerald-500 mt-1 flex-shrink-0" />
-                <div>
-                  <span className="font-semibold text-emerald-400">IP:</span>
-                  <span className="text-muted-foreground ml-1">Patent + 3.5 year legal moat</span>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="w-3 h-3 rounded-full bg-accent mt-1 flex-shrink-0" />
-                <div>
-                  <span className="font-semibold text-accent">Economic:</span>
-                  <span className="text-muted-foreground ml-1">10-20× ROI creates lock-in</span>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="w-3 h-3 rounded-full bg-purple-500 mt-1 flex-shrink-0" />
-                <div>
-                  <span className="font-semibold text-purple-400">Network:</span>
-                  <span className="text-muted-foreground ml-1">Becomes foundational infrastructure</span>
-                </div>
-              </div>
+            {/* Total Barrier */}
+            <div className="mt-6 bg-accent/10 border border-accent/50 rounded-xl px-6 py-3 text-center">
+              <span className="text-sm text-muted-foreground">Total replication barrier: </span>
+              <span className="text-xl font-bold text-accent">5+ years</span>
+              <span className="text-sm text-muted-foreground"> + </span>
+              <span className="text-lg font-semibold text-foreground">market position</span>
             </div>
           </div>
           
           <p className="text-center text-xs text-muted-foreground mt-4">
-            Each layer builds upon the previous — competitors must breach all four to replicate
+            Each layer builds upon the previous — competitors must overcome all four to replicate
           </p>
         </motion.div>
       </div>
