@@ -66,7 +66,7 @@ export const Slide01Title = ({ slideNumber, totalSlides }: SlideProps) => {
           className="bg-accent/10 border border-accent/30 rounded-xl px-8 py-4"
         >
           <p className="text-lg text-muted-foreground mb-1">Seeking</p>
-          <p className="text-3xl md:text-4xl font-bold text-accent">$1.5-2M Seed</p>
+          <p className="text-3xl md:text-4xl font-bold text-accent">$4.5M Seed</p>
         </motion.div>
       </div>
     </SlideLayout>

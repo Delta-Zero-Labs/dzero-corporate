@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { SlideLayout } from "../SlideLayout";
-import { User, Briefcase, Shield, Award, Target, TrendingUp, Building } from "lucide-react";
+import { User, Briefcase, Shield, Award, Target, TrendingUp, Building, Rocket } from "lucide-react";
 
 interface SlideProps {
   slideNumber: number;
@@ -21,10 +21,10 @@ const trackRecord = [
   "Patent author (provisional filed, continuation planned)",
 ];
 
-const exitPaths = [
-  { path: "Acquisition", detail: "by Kong, Datadog, F5" },
-  { path: "Profitability", detail: "Licensing = 90% margins" },
-  { path: "IPO", detail: "if foundational infrastructure" },
+const pathsToScale = [
+  { path: "Profitability", detail: "High-margin licensing supports growth without Series B" },
+  { path: "Strategic M&A", detail: "Customers become acquirers as they see value" },
+  { path: "Category Leader", detail: "Foundational infrastructure with defining potential" },
 ];
 
 export const Slide12Team = ({ slideNumber, totalSlides }: SlideProps) => {
@@ -97,16 +97,16 @@ export const Slide12Team = ({ slideNumber, totalSlides }: SlideProps) => {
               </div>
               <div className="text-center py-4">
                 <p className="text-muted-foreground mb-1">Raising</p>
-                <p className="text-4xl font-bold text-accent">$1.5-2M Seed</p>
+                <p className="text-4xl font-bold text-accent">$4.5M Seed</p>
               </div>
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <div className="bg-secondary/50 rounded-lg p-2 text-center">
                   <p className="text-muted-foreground">Use of Funds</p>
-                  <p className="text-foreground font-semibold">5-person team</p>
+                  <p className="text-foreground font-semibold text-xs">6-person team + infra + federal compliance</p>
                 </div>
                 <div className="bg-secondary/50 rounded-lg p-2 text-center">
                   <p className="text-muted-foreground">Timeline</p>
-                  <p className="text-foreground font-semibold">18 months</p>
+                  <p className="text-foreground font-semibold">24 months to Series A</p>
                 </div>
               </div>
             </div>
@@ -117,18 +117,21 @@ export const Slide12Team = ({ slideNumber, totalSlides }: SlideProps) => {
                 <TrendingUp className="w-5 h-5 text-accent" />
                 <p className="text-foreground font-semibold">Target</p>
               </div>
-              <p className="text-2xl font-bold text-accent">$2-5M ARR</p>
-              <p className="text-muted-foreground text-sm">3-5 licensees</p>
+              <p className="text-2xl font-bold text-accent">$15-20M ARR</p>
+              <p className="text-muted-foreground text-sm">10-15 licensees across 6+ domains</p>
             </div>
 
-            {/* Exit Paths */}
+            {/* Path to Scale */}
             <div className="bg-card/50 border border-border rounded-lg p-4">
-              <p className="text-foreground font-semibold mb-2">Exit Paths</p>
-              <div className="flex flex-wrap gap-2">
-                {exitPaths.map((exit, index) => (
-                  <div key={index} className="bg-secondary/50 rounded-lg px-3 py-2 text-sm">
-                    <span className="text-accent font-semibold">{exit.path}</span>
-                    <span className="text-muted-foreground"> {exit.detail}</span>
+              <div className="flex items-center gap-2 mb-2">
+                <Rocket className="w-4 h-4 text-accent" />
+                <p className="text-foreground font-semibold">Path to Scale</p>
+              </div>
+              <div className="space-y-2">
+                {pathsToScale.map((item, index) => (
+                  <div key={index} className="text-sm">
+                    <span className="text-accent font-semibold">{item.path}:</span>
+                    <span className="text-muted-foreground"> {item.detail}</span>
                   </div>
                 ))}
               </div>

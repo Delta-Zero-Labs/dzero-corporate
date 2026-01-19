@@ -13,6 +13,7 @@ import { Slide06Benchmarks } from "./slides/Slide06Benchmarks";
 import { Slide07APIGateways } from "./slides/Slide07APIGateways";
 import { Slide08AICost } from "./slides/Slide08AICost";
 import { Slide09Defense } from "./slides/Slide09Defense";
+import { Slide09BStrategicDepth } from "./slides/Slide09BStrategicDepth";
 import { Slide10GTM } from "./slides/Slide10GTM";
 import { Slide11Moat } from "./slides/Slide11Moat";
 import { Slide12Team } from "./slides/Slide12Team";
@@ -27,6 +28,7 @@ const slides = [
   Slide07APIGateways,
   Slide08AICost,
   Slide09Defense,
+  Slide09BStrategicDepth,
   Slide10GTM,
   Slide11Moat,
   Slide12Team,
@@ -42,6 +44,7 @@ const slideNames = [
   "API Gateways",
   "AI Cost",
   "Defense",
+  "Strategic Depth",
   "GTM",
   "Moat",
   "Team & Ask",
