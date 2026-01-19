@@ -12,7 +12,7 @@ const customers = ["Kong", "NGINX", "Envoy", "Traefik"];
 const benefits = [
   { icon: TrendingDown, value: "80%", label: "Infrastructure cost reduction" },
   { icon: Zap, value: "10×", label: "Faster policy iteration" },
-  { icon: DollarSign, value: "$4B", label: "API gateway market" },
+  { icon: DollarSign, value: "$4B", label: "API Gateway Market Size" },
 ];
 
 export const Slide07APIGateways = ({ slideNumber, totalSlides }: SlideProps) => {

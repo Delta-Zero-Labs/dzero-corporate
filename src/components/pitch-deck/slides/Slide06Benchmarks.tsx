@@ -138,6 +138,9 @@ export const Slide06Benchmarks = ({ slideNumber, totalSlides }: SlideProps) => {
               </LineChart>
             </ResponsiveContainer>
           </div>
+          <p className="text-center text-xs text-muted-foreground mt-2">
+            Source: dzero benchmarks (reproducible, <a href="https://github.com/Michael-A-Kuykendall" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GitHub</a>)
+          </p>
         </motion.div>
 
         {/* Key Metrics */}

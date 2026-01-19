@@ -104,7 +104,7 @@ export const Slide04HowItWorks = ({ slideNumber, totalSlides }: SlideProps) => {
 
             {/* DZero Engine */}
             <div className="bg-accent/20 border-2 border-accent rounded-xl px-8 py-6 text-center">
-              <p className="text-4xl mb-2">∂₀</p>
+              <p className="text-6xl mb-2">∂₀</p>
               <p className="text-foreground font-bold">DZero Engine</p>
               <div className="flex flex-wrap justify-center gap-2 mt-3">
                 <span className="text-xs bg-primary/50 px-2 py-1 rounded">Selector Dedup</span>

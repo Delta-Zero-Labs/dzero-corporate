@@ -146,15 +146,19 @@ export const Slide09Defense = ({ slideNumber, totalSlides }: SlideProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="grid md:grid-cols-2 gap-4"
+          className="grid md:grid-cols-3 gap-4"
         >
           <div className="bg-accent/10 border border-accent/30 rounded-lg p-3 text-center">
             <p className="text-muted-foreground text-sm">License Model</p>
             <p className="text-accent font-semibold">$200K-500K/year</p>
           </div>
           <div className="bg-accent/10 border border-accent/30 rounded-lg p-3 text-center">
-            <p className="text-muted-foreground text-sm">Customer Value</p>
-            <p className="text-accent font-semibold">5-10× throughput per appliance</p>
+            <p className="text-muted-foreground text-sm">Throughput Gain</p>
+            <p className="text-accent font-semibold">5-10× per appliance</p>
+          </div>
+          <div className="bg-accent/10 border border-accent/30 rounded-lg p-3 text-center">
+            <p className="text-muted-foreground text-sm">Federal Opportunities</p>
+            <p className="text-accent font-semibold">+ Contract Revenue</p>
           </div>
         </motion.div>
       </div>
