@@ -14,9 +14,9 @@ const scanComparison = {
   docName: "citm_catalog.json",
   domTimeMs: 15.2,
   domMemoryMB: 7.77,
-  pounceTimeMs: 5.1,
+  pounceTimeMs: 5.2,
   pounceMemoryKB: 1,
-  speedup: 2.98,
+  speedup: 2.9,
   memoryReduction: 7772,
   keysFound: ["areaNames", "events", "performances"],
 };
@@ -80,7 +80,7 @@ export const Slide15DemoSemanticScan = ({ slideNumber, totalSlides }: SlideProps
         >
           <p className="text-accent font-mono text-sm mb-2">STREAMING INTELLIGENCE</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Scan Without Parsing: <span className="text-accent">3× Faster, 7772× Less Memory</span>
+            Scan Without Parsing: <span className="text-accent">2.9× Faster, 7772× Less Memory</span>
           </h2>
         </motion.div>
 
@@ -130,7 +130,7 @@ export const Slide15DemoSemanticScan = ({ slideNumber, totalSlides }: SlideProps
                     <span className="text-muted-foreground text-sm font-mono">Scanning...</span>
                   ) : (
                     <span className="text-chart-3 text-sm font-mono flex items-center gap-1">
-                      <Zap className="w-4 h-4" /> Done! 5.1ms, 1KB
+                      <Zap className="w-4 h-4" /> Done! 5.2ms, 1KB
                     </span>
                   )}
                 </div>
@@ -148,6 +148,39 @@ export const Slide15DemoSemanticScan = ({ slideNumber, totalSlides }: SlideProps
           </div>
         </motion.div>
 
+        {/* Speed Comparison Table */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5 }}
+          className="bg-card/30 border border-border rounded-xl p-4 mb-6"
+        >
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 text-muted-foreground">Approach</th>
+                <th className="text-right py-2 text-muted-foreground">Time</th>
+                <th className="text-right py-2 text-muted-foreground">Memory</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border/50">
+                <td className="py-3 text-destructive font-medium">DOM Parse + Query</td>
+                <td className="py-3 text-right text-destructive font-mono">15.2ms</td>
+                <td className="py-3 text-right text-destructive font-mono">7.77MB</td>
+              </tr>
+              <tr>
+                <td className="py-3 text-chart-3 font-medium">Pounce Stream Scan</td>
+                <td className="py-3 text-right text-chart-3 font-mono">5.2ms</td>
+                <td className="py-3 text-right text-chart-3 font-mono">1KB</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="text-center mt-3">
+            <p className="text-accent font-semibold text-sm">2.9× faster</p>
+          </div>
+        </motion.div>
+
         {/* Metrics Cards */}
         {showMetrics && (
           <motion.div
@@ -157,7 +190,7 @@ export const Slide15DemoSemanticScan = ({ slideNumber, totalSlides }: SlideProps
           >
             <MetricCard
               icon={Clock}
-              value="2.98×"
+              value="2.9×"
               label="Speedup"
               subtitle="Time to first result"
               variant="accent"
@@ -212,6 +245,18 @@ export const Slide15DemoSemanticScan = ({ slideNumber, totalSlides }: SlideProps
           </motion.div>
         )}
       </div>
+
+      {/* NDA Footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.0 }}
+        className="mt-6 text-center"
+      >
+        <p className="text-muted-foreground text-sm">
+          Next Steps: NDA for Code Walkthrough
+        </p>
+      </motion.div>
     </SlideLayout>
   );
 };

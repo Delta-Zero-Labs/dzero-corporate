@@ -11,11 +11,11 @@ interface SlideProps {
 }
 
 const baselineData = [
-  { obligations: "1", baseline: 3.8, pounce: 5.5 },
+  { obligations: "10", baseline: 38, pounce: 5.5 },
   { obligations: "100", baseline: 380, pounce: 5.5 },
+  { obligations: "1K", baseline: 3800, pounce: 5.5 },
   { obligations: "10K", baseline: 38000, pounce: 5.5 },
   { obligations: "100K", baseline: 380000, pounce: 5.5 },
-  { obligations: "1M", baseline: 3800000, pounce: 5.5 },
 ];
 
 const baselineRows = [
@@ -122,7 +122,7 @@ export const Slide13DemoFlatScaling = ({ slideNumber, totalSlides }: SlideProps)
                 <YAxis 
                   stroke="hsl(var(--muted-foreground))"
                   scale="log"
-                  domain={[1, 10000000]}
+                  domain={[1, 1000000]}
                   tickFormatter={(value) => value >= 1000000 ? `${value/1000000}M` : value >= 1000 ? `${value/1000}K` : value}
                   tick={{ fontSize: 11 }}
                 />
@@ -157,6 +157,18 @@ export const Slide13DemoFlatScaling = ({ slideNumber, totalSlides }: SlideProps)
           </div>
         </motion.div>
 
+        {/* Caption */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4 }}
+          className="text-center mb-4"
+        >
+          <p className="text-muted-foreground text-sm italic">
+            Adding rules costs ~0 marginal runtime
+          </p>
+        </motion.div>
+
         {/* Key Metrics */}
         <div className="grid grid-cols-3 gap-3">
           <MetricCard
@@ -182,6 +194,18 @@ export const Slide13DemoFlatScaling = ({ slideNumber, totalSlides }: SlideProps)
           />
         </div>
       </div>
+
+      {/* NDA Footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.2 }}
+        className="mt-6 text-center"
+      >
+        <p className="text-muted-foreground text-sm">
+          Next Steps: NDA for Code Walkthrough
+        </p>
+      </motion.div>
     </SlideLayout>
   );
 };

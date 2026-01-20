@@ -6,6 +6,7 @@ import { AnimatedCounter } from "../demos/AnimatedCounter";
 import { ProgressBar } from "../demos/ProgressBar";
 import { ComparisonCard } from "../demos/ComparisonCard";
 import { MetricCard } from "../demos/MetricCard";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from "recharts";
 
 interface SlideProps {
   slideNumber: number;
@@ -14,13 +15,13 @@ interface SlideProps {
 
 const gatingStats = {
   recordsTotal: 100000,
-  recordsDropped: 18300,
-  recordsPassed: 81700,
-  tokensSaved: 96148,
+  recordsDropped: 23800,
+  recordsPassed: 76200,
+  tokensSaved: 114660,
   costWithoutPounce: 210.00,
-  costWithPounce: 171.57,
-  savingsPerBatch: 38.43,
-  savingsPercent: 18.3,
+  costWithPounce: 160.00,
+  savingsPerBatch: 50.00,
+  savingsPercent: 23.8,
   dailyCostWithout: 584000,
   dailyCostWith: 445000,
   annualSavings: 50774400,
@@ -101,7 +102,7 @@ export const Slide14DemoAIGating = ({ slideNumber, totalSlides }: SlideProps) =>
             </div>
           </div>
 
-          <ProgressBar progress={81.7} duration={2.5} delay={0.3} variant="accent" />
+          <ProgressBar progress={76.2} duration={2.5} delay={0.3} variant="accent" />
         </motion.div>
 
         {/* Two-Column Comparison */}
@@ -123,17 +124,63 @@ export const Slide14DemoAIGating = ({ slideNumber, totalSlides }: SlideProps) =>
           <ComparisonCard title="With Pounce" variant="accent" delay={1.2}>
             <div className="space-y-2 text-sm">
               <p className="text-muted-foreground">Pre-filter sensitive records</p>
-              <p className="text-muted-foreground">81,700 records × 70 tokens avg</p>
-              <p className="text-muted-foreground">= 5,719,000 tokens/batch</p>
+              <p className="text-muted-foreground">76,200 records × 70 tokens avg</p>
+              <p className="text-muted-foreground">= 5,334,000 tokens/batch</p>
               <div className="pt-2 border-t border-border/50">
-                <p className="text-chart-3 text-2xl font-bold font-mono">$171.57/batch</p>
+                <p className="text-chart-3 text-2xl font-bold font-mono">$160.00/batch</p>
               </div>
               <p className="text-accent text-xs font-semibold">
-                Savings: $38.43/batch (18.3%)
+                Savings: $50.00/batch (23.8%)
               </p>
             </div>
           </ComparisonCard>
         </div>
+
+        {/* Cost Comparison Chart */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.8 }}
+          className="bg-card/30 border border-border rounded-xl p-4 mb-4"
+        >
+          <div className="h-48">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { name: 'Without Pounce', cost: 210 },
+                { name: 'With Pounce', cost: 160 }
+              ]}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis 
+                  dataKey="name" 
+                  stroke="hsl(var(--muted-foreground))"
+                  tick={{ fontSize: 12 }}
+                />
+                <YAxis 
+                  stroke="hsl(var(--muted-foreground))"
+                  tickFormatter={(value) => `$${value}`}
+                  tick={{ fontSize: 11 }}
+                />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'hsl(var(--card))', 
+                    border: '1px solid hsl(var(--border))',
+                    borderRadius: '8px',
+                    fontSize: '12px'
+                  }}
+                  formatter={(value: number) => [`$${value}`, 'Cost']}
+                />
+                <Bar 
+                  dataKey="cost" 
+                  fill="hsl(var(--accent))"
+                  radius={[4, 4, 0, 0]}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="text-center mt-2">
+            <p className="text-accent font-semibold text-sm">23.8%+ savings</p>
+          </div>
+        </motion.div>
 
         {/* Enterprise Projection */}
         <motion.div
@@ -163,6 +210,18 @@ export const Slide14DemoAIGating = ({ slideNumber, totalSlides }: SlideProps) =>
           </div>
         </motion.div>
       </div>
+
+      {/* NDA Footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.5 }}
+        className="mt-6 text-center"
+      >
+        <p className="text-muted-foreground text-sm">
+          Next Steps: NDA for Code Walkthrough
+        </p>
+      </motion.div>
     </SlideLayout>
   );
 };
