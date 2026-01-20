@@ -1,6 +1,7 @@
+// Force rebuild - 16 slides
 import { useState, useCallback, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Maximize, Minimize, Download, Loader2, Printer } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize, Minimize, Printer, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import all slides
@@ -17,6 +18,11 @@ import { Slide09BStrategicDepth } from "./slides/Slide09BStrategicDepth";
 import { Slide10GTM } from "./slides/Slide10GTM";
 import { Slide11Moat } from "./slides/Slide11Moat";
 import { Slide12Team } from "./slides/Slide12Team";
+import { Slide13DemoFlatScaling } from "./slides/Slide13DemoFlatScaling";
+import { Slide14DemoAIGating } from "./slides/Slide14DemoAIGating";
+import { Slide15DemoSemanticScan } from "./slides/Slide15DemoSemanticScan";
+
+const FIRST_DEMO_SLIDE_INDEX = 13; // 0-indexed, slide 14
 
 const slides = [
   Slide01Title,
@@ -32,6 +38,9 @@ const slides = [
   Slide10GTM,
   Slide11Moat,
   Slide12Team,
+  Slide13DemoFlatScaling,
+  Slide14DemoAIGating,
+  Slide15DemoSemanticScan,
 ];
 
 const slideNames = [
@@ -48,6 +57,9 @@ const slideNames = [
   "GTM",
   "Moat",
   "Team & Ask",
+  "Demo: Flat Scaling",
+  "Demo: AI Gating",
+  "Demo: Semantic Scan",
 ];
 
 export const PitchDeck = () => {
@@ -79,6 +91,10 @@ export const PitchDeck = () => {
 
   const handlePrint = useCallback(() => {
     window.print();
+  }, []);
+
+  const goToDemos = useCallback(() => {
+    setCurrentSlide(FIRST_DEMO_SLIDE_INDEX);
   }, []);
 
   // Keyboard navigation
@@ -165,10 +181,18 @@ export const PitchDeck = () => {
               <ChevronRight className="w-5 h-5" />
             </Button>
             <Button
+              onClick={goToDemos}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground ml-2 gap-1.5"
+              size="sm"
+            >
+              <Play className="w-4 h-4" />
+              <span className="hidden sm:inline">View Demos</span>
+            </Button>
+            <Button
               variant="ghost"
               size="icon"
               onClick={handlePrint}
-              className="text-muted-foreground hover:text-foreground ml-2"
+              className="text-muted-foreground hover:text-foreground"
               title="Print / Save as PDF (Ctrl+P)"
             >
               <Printer className="w-5 h-5" />
