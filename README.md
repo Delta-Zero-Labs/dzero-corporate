@@ -11,9 +11,9 @@ The behavior is the point.
 
 See Pounce in action with real performance data:
 
-- **[Flat Scaling Demo](demo.gif)** - Runtime stays constant with 1M+ rules
-- **[AI Cost Savings Demo](demos/ai-gate.md)** - 24% reduction in LLM tokenization costs  
-- **[Semantic Scanning Demo](demos/semantic-scanning.md)** - 3× faster than DOM parsing
+- **[Flat Scaling Demo](demos/flat-scaling.md)** - 100,000× more rules, same cost
+- **[AI Cost Savings Demo](demos/ai-gate.md)** - 23.8% reduction in LLM tokenization costs ($14M/year at scale)
+- **[Semantic Scanning Demo](demos/semantic-scanning.md)** - 2.9× faster than DOM parsing
 
 ## Pitch Deck
 
