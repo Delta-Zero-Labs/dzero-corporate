@@ -7,25 +7,17 @@ The behavior is the point.
 
 ---
 
-## AI Cost Reduction
+## Live Demos
 
-**23.8% token reduction** on 30K records; scales to multi-million annual savings.
+See Pounce in action with real performance data:
 
-Applies JSON gating before LLM calls to cut token spend. Deterministic filtering; no model quality regression observed in targeted scenarios.
+- **[Flat Scaling Demo](demo.gif)** - Runtime stays constant with 1M+ rules
+- **[AI Cost Savings Demo](demos/ai-gate.md)** - 24% reduction in LLM tokenization costs  
+- **[Semantic Scanning Demo](demos/semantic-scanning.md)** - 3× faster than DOM parsing
 
----
+## Pitch Deck
 
-## Semantic Scanning
-
-**2.9x speedup** vs DOM parsing for focused field extraction.
-
-Event-driven scanning with bounded memory and zero-copy spans. Deterministic hashing and validation on 108K+ events.
-
----
-
-## Slide Deck
-
-[View the investor deck →](https://michael-a-kuykendall.github.io/dzero/)
+[View the full investor presentation →](https://michael-a-kuykendall.github.io/dzero/)
 
 ---
 
