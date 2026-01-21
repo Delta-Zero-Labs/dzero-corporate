@@ -167,6 +167,9 @@ export const Slide13DemoFlatScaling = ({ slideNumber, totalSlides }: SlideProps)
           <p className="text-muted-foreground text-sm italic">
             Adding rules costs ~0 marginal runtime
           </p>
+          <p className="text-muted-foreground/80 text-[11px] mt-1">
+            * Targeted benchmark; full repro details post-NDA.
+          </p>
         </motion.div>
 
         {/* Key Metrics */}

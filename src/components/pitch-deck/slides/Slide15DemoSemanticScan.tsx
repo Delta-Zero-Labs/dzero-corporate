@@ -242,6 +242,9 @@ export const Slide15DemoSemanticScan = ({ slideNumber, totalSlides }: SlideProps
             <p className="text-accent font-semibold text-sm">
               Zero allocations. Zero DOM tree. Just facts.
             </p>
+            <p className="text-muted-foreground/80 text-[11px] mt-2">
+              * Targeted scenarios; full reproduction details available post-NDA.
+            </p>
           </motion.div>
         )}
       </div>

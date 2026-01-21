@@ -1,4 +1,4 @@
-// Force rebuild - 16 slides
+// Force rebuild - 17 slides
 import { useState, useCallback, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Maximize, Minimize, Printer, Play } from "lucide-react";
@@ -11,10 +11,11 @@ import { Slide03Insight } from "./slides/Slide03Insight";
 import { Slide04HowItWorks } from "./slides/Slide04HowItWorks";
 import { Slide05Patent } from "./slides/Slide05Patent";
 import { Slide06Benchmarks } from "./slides/Slide06Benchmarks";
+import { Slide07DemosOverview } from "./slides/Slide07DemosOverview";
 import { Slide07APIGateways } from "./slides/Slide07APIGateways";
 import { Slide08AICost } from "./slides/Slide08AICost";
 import { Slide09Defense } from "./slides/Slide09Defense";
-import { Slide09BStrategicDepth } from "./slides/Slide09BStrategicDepth";
+import { Slide10BAskJustification } from "./slides/Slide10BAskJustification";
 import { Slide10GTM } from "./slides/Slide10GTM";
 import { Slide11Moat } from "./slides/Slide11Moat";
 import { Slide12Team } from "./slides/Slide12Team";
@@ -22,7 +23,7 @@ import { Slide13DemoFlatScaling } from "./slides/Slide13DemoFlatScaling";
 import { Slide14DemoAIGating } from "./slides/Slide14DemoAIGating";
 import { Slide15DemoSemanticScan } from "./slides/Slide15DemoSemanticScan";
 
-const FIRST_DEMO_SLIDE_INDEX = 13; // 0-indexed, slide 14
+const FIRST_DEMO_SLIDE_INDEX = 14; // 0-indexed, first demo slide
 
 const slides = [
   Slide01Title,
@@ -31,10 +32,11 @@ const slides = [
   Slide04HowItWorks,
   Slide05Patent,
   Slide06Benchmarks,
+  Slide07DemosOverview,
   Slide07APIGateways,
   Slide08AICost,
   Slide09Defense,
-  Slide09BStrategicDepth,
+  Slide10BAskJustification,
   Slide10GTM,
   Slide11Moat,
   Slide12Team,
@@ -50,13 +52,14 @@ const slideNames = [
   "How It Works",
   "Patent",
   "Benchmarks",
+  "Demos Overview",
   "API Gateways",
   "AI Cost",
   "Defense",
-  "Strategic Depth",
+  "Why $4.5M",
   "GTM",
   "Moat",
-  "Team & Ask",
+  "Team",
   "Demo: Flat Scaling",
   "Demo: AI Gating",
   "Demo: Semantic Scan",

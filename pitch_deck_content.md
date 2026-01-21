@@ -1,0 +1,176 @@
+# Delta Zero Labs Pitch Deck
+
+**Visuals:** ∂₀ logo throughout; consistent color scheme (accent gradients)
+
+## Slide 1: Title
+- Symbol: ∂₀ (Delta Zero)
+- Company: Delta Zero Labs
+- Tagline: Building systems where ∂cost/∂complexity = 0
+- Founder: Mike Kuykendall
+- Background: IRS.gov Lead Developer | Former USAF Staff Sergeant | VOSB Owner
+- Contact: 
+  - Email: michaelallenkuykendall@gmail.com
+  - Phone: 816-835-3920
+  - LinkedIn: https://www.linkedin.com/in/makuykendall/
+- Seeking: $4.5M Seed
+
+## Slide 2: Problem
+**Title:** Every Infrastructure System Has This Scaling Problem
+
+**Affected Systems:**
+- **API Gateways:** 100 policies = 100× CPU overhead
+- **Observability:** 1000 filters = 1000× ingestion cost  
+- **Firewalls:** 500 DPI rules = 500× bandwidth penalty
+- **Databases:** N queries = N full table scans
+
+## Slide 3: Insight
+**Title:** The Insight That Changes Everything
+
+**Key Points:**
+- JSON is the universal data format for modern systems
+- But processing JSON scales O(n²) with complexity
+- Every policy/rule/filter requires full JSON parsing
+- This creates exponential scaling problems
+
+## Slide 4: How It Works
+**Title:** How Pounce Works
+
+**Core Technology:**
+- Event-driven scanning with minimal structural events
+- Pluggable probes for bounded facts (shape, keys, extraction)
+- Zero-copy spans for memory efficiency
+- Bounded memory enforcement
+- Deterministic output with fail-fast JSON handling
+- FeedMe integration for composability
+
+**Visual:** Graph showing traditional O(n²) parsing curve vs. Pounce O(1) flatline
+
+## Slide 5: Patent
+**Title:** Patent Pending
+
+**Patent:** Method and System for High-Performance JSON Boundary Intelligence
+
+**Status:** Provisional filed December 2025 (non-provisional due December 2026)
+
+**Key Claims:**
+- Event-driven scanning with bounded memory enforcement
+- Pluggable probes for deterministic fact extraction
+- Zero-copy spans for memory efficiency
+- Differentiation from prior art (e.g., jq parsers lack bounded memory)
+
+## Slide 6: Benchmarks
+**Title:** Performance Advantages
+
+**Key Metrics:**
+- Up to 5000x faster than full DOM parsing in targeted extraction scenarios
+- Measured <0.08% overhead with FeedMe integration
+- Verified through comprehensive code audit
+
+## Slide 7: Demos Overview
+**Title:** Live Demos: See Pounce in Action
+
+**Demo Previews:**
+- **Flat Scaling Demo:** Rule count ramp visualization
+- **AI Gating Demo:** Token cost reduction showcase  
+- **Semantic Scan Demo:** Speed comparison demonstration
+
+**Next Steps:** NDA available for full code walkthrough
+**Enhancements:** 2-min Loom videos; QR codes to live site; ROI stories ($50M savings)
+**Repo:** NDA-gated with CI badges, 90% test coverage; roadmap doc for multi-products
+**Site:** Interactive with "Run Demo" buttons
+
+## Slide 8: API Gateways
+**Title:** API Gateway Use Case
+
+**Features:**
+- Structural limits enforcement (max_bytes, max_depth, max_keys)
+- Required key validation
+- Selective field forwarding with byte reduction tracking
+- Streaming size validation
+- Proper HTTP error responses
+
+**ROI:** 80% CPU savings for Kong → $1M+ license potential
+
+## Slide 9: AI Cost
+**Title:** AI Cost Reduction
+
+**Benefits:**
+- 90% reduction in tokenization costs
+- Deterministic JSON inspection before AI processing
+- Selective data forwarding to AI models
+
+**ROI:** $50M+ annual savings at enterprise scale (100M records/day)
+
+## Slide 10: Defense
+**Title:** Defense Applications
+
+**Capabilities:**
+- Zero-trust JSON validation
+- Boundary intelligence for secure data processing
+- Deterministic inspection for compliance
+
+**Strategic Advantages:**
+- VOSB federal contracting edge
+- Patent-protected technology
+- 18-24 month rewrite barrier vs. competitors
+
+**ROI:** Gov contracts via VOSB edge; zero-trust compliance for defense data
+
+## Slide 11: Why $4.5M
+**Title:** Why $4.5M: Scaling to Multi-Product Licensing Lab
+
+**Capital Allocation (Pie Chart):**
+- 40% Engineering (6 hires, parallel dev)
+- 25% Sales & Marketing
+- 20% IP Protection & Patents
+- 15% Operations & Legal
+
+**Outcomes:** 2-year runway → 3 products → $10M ARR
+
+**Pro Forma:** $187K/month burn; ARR ramp to $10M Year 2
+**Validation:** Mentor call completed; demos tie to $4.5M value
+
+## Slide 12: GTM
+**Title:** Go-To-Market Strategy
+
+**Market Entry Plan:**
+- Q1: Outbound to 50 API gateway vendors (Kong, Apigee)
+- Q2: Defense pilots via VOSB network (Gov contracts)
+- Year 1: $2M ARR from API licenses
+- Year 2: $10M ARR via multi-product expansion
+
+## Slide 13: Moat
+**Title:** Competitive Moat
+
+**Defensive Advantages:**
+- Patent pending on core technology
+- 18-24 month rewrite barrier for competitors
+- VOSB federal contracting edge
+- First-mover in JSON boundary intelligence
+
+## Slide 14: Team
+**Title:** Team
+
+**Founder:** Mike Kuykendall
+- 15+ years infrastructure development (IRS.gov lead)
+- Former USAF Staff Sergeant
+- VOSB owner with federal contracting experience
+
+**Hiring Plan:** 6 Rust experts Year 1 for parallel product development
+**Workload:** Budget for exec coach ($10K/year); 6-month personal runway secured
+
+## Slide 15: Demo Flat Scaling
+**Title:** Demo: Flat Scaling
+
+**Demonstration of flat scaling capabilities**
+
+## Slide 16: Demo AI Gating
+**Title:** Demo: AI Gating
+
+**Demonstration of AI gating functionality**
+
+## Slide 17: Demo Semantic Scan
+**Title:** Demo: Semantic Scan
+
+**Demonstration of semantic scanning features**
+**Extensions:** Ties to generative rules for AI inversions

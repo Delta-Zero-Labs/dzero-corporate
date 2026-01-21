@@ -1,5 +1,7 @@
 # Semantic Scanning Demo
 
+Patent status: Provisional filed December 2025 (non-provisional due December 2026).
+
 ## Targeted JSON Extraction Performance
 
 **Claim**: Event-driven scanning beats DOM parsing for focused field extraction.
@@ -35,14 +37,26 @@ Pounce Scan         99ms
 - **Schema validation**: Verify structure without full parse
 - **Cost reduction**: Avoid tokenizing irrelevant content
 
-## How to Reproduce
+## Verify (Live)
+
+1. Open the live deck: https://delta-zero-labs.github.io/dzero/
+2. Navigate to the "Demo: Semantic Scan" slide.
+3. Confirm the comparison table and the stated speedup/memory reduction under the stated conditions.
+
+## Run Locally
 
 ```bash
-cd libs/pounce
-cargo run --release --bin pounce_demo -- \
-  --input bench/corpus/cache/movies.json \
-  --reps 10
+git clone https://github.com/Delta-Zero-Labs/dzero.git
+cd dzero
+npm install
+npm run dev
 ```
+
+Then open the URL Vite prints and navigate to the demo slide.
+
+## Where the Demo Lives
+
+- Slide implementation: `src/components/pitch-deck/slides/Slide15DemoSemanticScan.tsx`
 
 ## Integrity Guarantees
 
@@ -50,4 +64,4 @@ cargo run --release --bin pounce_demo -- \
 - **Hash verification**: Deterministic output validated via SHA-256
 - **No cherry-picking**: Results from full corpus, not selected samples
 
-Status: Validated in macrobenches; production-ready for selective forwarding.
+Status: Demonstrates the targeted extraction approach; full benchmark artifacts available post-NDA.

@@ -52,7 +52,7 @@ export const Slide01Title = ({ slideNumber, totalSlides }: SlideProps) => {
             IRS.gov Lead Developer | Former USAF Staff Sergeant | VOSB Owner
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mt-4">
-            <a href="mailto:mikchaelallenkuykendall@gmail.com" className="hover:text-accent transition-colors">📧 mikchaelallenkuykendall@gmail.com</a>
+            <a href="mailto:michaelallenkuykendall@gmail.com" className="hover:text-accent transition-colors">📧 michaelallenkuykendall@gmail.com</a>
             <span>📱 816-835-3920</span>
             <a href="https://www.linkedin.com/in/makuykendall/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">🔗 LinkedIn</a>
           </div>
