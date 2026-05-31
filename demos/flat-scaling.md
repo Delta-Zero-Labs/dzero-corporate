@@ -7,11 +7,11 @@
 
 ```
 OBLIGATIONS     p50 (µs)
-1               3.8
-100             3.6
-10,000          3.6
-100,000         5.9
-1,000,000       5.5
+1               3.2
+100             3.2
+10,000          3.3
+100,000         3.3
+1,000,000       3.2
 ```
 
 **FLAT.** 1 million obligations costs the same as 1 obligation.

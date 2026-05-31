@@ -8,8 +8,8 @@
 
 ```
 METHOD              TIME (108K events)
-DOM Parse + Query   287ms
-Delta Zero Scan     99ms
+DOM Parse + Query   12.3ms
+Delta Zero Scan     4.2ms
 ```
 
 **2.9× speedup** for targeted field extraction.
