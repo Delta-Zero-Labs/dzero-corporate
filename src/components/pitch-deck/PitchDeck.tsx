@@ -1,4 +1,4 @@
-// Force rebuild - 17 slides
+// Force rebuild - 18 slides
 import { useState, useCallback, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Maximize, Minimize, Printer, Play } from "lucide-react";
@@ -12,6 +12,7 @@ import { Slide04HowItWorks } from "./slides/Slide04HowItWorks";
 import { Slide05Patent } from "./slides/Slide05Patent";
 import { Slide06Benchmarks } from "./slides/Slide06Benchmarks";
 import { Slide07DemosOverview } from "./slides/Slide07DemosOverview";
+import { Slide08ReactiveSQL } from "./slides/Slide08ReactiveSQL";
 import { Slide07APIGateways } from "./slides/Slide07APIGateways";
 import { Slide08AICost } from "./slides/Slide08AICost";
 import { Slide09Defense } from "./slides/Slide09Defense";
@@ -23,7 +24,7 @@ import { Slide13DemoFlatScaling } from "./slides/Slide13DemoFlatScaling";
 import { Slide14DemoAIGating } from "./slides/Slide14DemoAIGating";
 import { Slide15DemoSemanticScan } from "./slides/Slide15DemoSemanticScan";
 
-const FIRST_DEMO_SLIDE_INDEX = 14; // 0-indexed, first demo slide
+const FIRST_DEMO_SLIDE_INDEX = 15; // 0-indexed, first demo slide
 
 const slides = [
   Slide01Title,
@@ -33,6 +34,7 @@ const slides = [
   Slide05Patent,
   Slide06Benchmarks,
   Slide07DemosOverview,
+  Slide08ReactiveSQL,
   Slide07APIGateways,
   Slide08AICost,
   Slide09Defense,
@@ -52,7 +54,8 @@ const slideNames = [
   "How It Works",
   "Patent",
   "Benchmarks",
-  "Demos Overview",
+  "Validated Applications",
+  "Reactive SQL Engine",
   "API Gateways",
   "AI Cost",
   "Defense",
@@ -68,6 +71,7 @@ const slideNames = [
 export const PitchDeck = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isPrintMode, setIsPrintMode] = useState(false);
   const totalSlides = slides.length;
 
   const goToNext = useCallback(() => {
@@ -93,7 +97,11 @@ export const PitchDeck = () => {
   }, []);
 
   const handlePrint = useCallback(() => {
-    window.print();
+    setIsPrintMode(true);
+    setTimeout(() => {
+      window.print();
+      setIsPrintMode(false);
+    }, 100);
   }, []);
 
   const goToDemos = useCallback(() => {
@@ -189,7 +197,7 @@ export const PitchDeck = () => {
               size="sm"
             >
               <Play className="w-4 h-4" />
-              <span className="hidden sm:inline">View Demos</span>
+              <span className="hidden sm:inline">View Work</span>
             </Button>
             <Button
               variant="ghost"
@@ -214,13 +222,26 @@ export const PitchDeck = () => {
 
       {/* Slide Content */}
       <div id="slide-content" className="flex-1 pt-14 overflow-hidden print:pt-0">
-        <AnimatePresence mode="wait">
-          <CurrentSlideComponent
-            key={currentSlide}
-            slideNumber={currentSlide + 1}
-            totalSlides={totalSlides}
-          />
-        </AnimatePresence>
+        {isPrintMode ? (
+          <div className="print-container">
+            {slides.map((SlideComponent, index) => (
+              <div key={index} className="print-slide">
+                <SlideComponent
+                  slideNumber={index + 1}
+                  totalSlides={totalSlides}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <AnimatePresence mode="wait">
+            <CurrentSlideComponent
+              key={currentSlide}
+              slideNumber={currentSlide + 1}
+              totalSlides={totalSlides}
+            />
+          </AnimatePresence>
+        )}
       </div>
 
       {/* Keyboard hints */}

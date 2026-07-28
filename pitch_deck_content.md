@@ -66,20 +66,47 @@
 - Measured <0.08% overhead with FeedMe integration
 - Verified through comprehensive code audit
 
-## Slide 7: Demos Overview
-**Title:** Live Demos: See Pounce in Action
+## Slide 7: Validated Applications
+**Title:** Validated Applications
 
-**Demo Previews:**
-- **Flat Scaling Demo:** Rule count ramp visualization
-- **AI Gating Demo:** Token cost reduction showcase  
-- **Semantic Scan Demo:** Speed comparison demonstration
+**Products built on the saturation fabric core:**
+- **Reactive Columnar Database:** Live query results as functions of data, not snapshots. O(delta) incremental updates. Active development.
+- **Ethereum Trading Platform:** Direct P2P connectivity, no RPC providers. 70+ peers tested. Commodity hardware. Active development.
+- **API Security & Policy Engine:** Flat-scaling policy evaluation. Demo available.
+- **LLM Cost Optimization:** Pre-tokenization gating, 70-90% record drop before AI. Demo available.
+- **Semantic Data Scanning:** Single-pass extraction, 2.9x faster than baseline. Demo available.
 
-**Next Steps:** NDA available for full code walkthrough
-**Enhancements:** 2-min Loom videos; QR codes to live site; ROI stories ($50M savings)
-**Repo:** NDA-gated with CI badges, 90% test coverage; roadmap doc for multi-products
-**Site:** Interactive with "Run Demo" buttons
+## Slide 8: Reactive SQL Engine
+**Title:** Reactive SQL Engine
 
-## Slide 8: API Gateways
+> The first SQL database where query results are live functions of the data,
+> not snapshots. ∂refresh/∂delta = 0.
+
+**What It Is:**
+A reactive relational engine built on the Delta Zero saturation fabric.
+Every derived result knows exactly which input facts produced it. Retract a row,
+and the engine surgically unwinds only the results that depended on it — in the
+same pass, at O(delta) cost. No re-run. No second pass.
+
+**Architecture:**
+- **Arena (Node Store):** Hash-cons node store. Structure only — plan trees, column lists, sort specs. Immortal, deduped, never data.
+- **FactStore (Live Facts):** The live fact set. Asserted, retracted, provenance-tracked. O(plan) + O(result), NOT O(rows).
+- **SaturationFabric Loop:** Facts arrive → Alpha index routes in O(1) → Handlers fire → Loop to fixpoint → Output.
+
+**Performance (10M rows, debug build):**
+| Operator | Reactive Engine | DuckDB | Δ |
+|---|---|---|---|
+| scan | 0.02ms | 349ms | 0.00× |
+| filter | 75.6ms | 89.5ms | 0.84× |
+| agg_sum | 2.0ms | 2.6ms | 0.78× |
+| order_by | 198.6ms | 391ms | 0.51× |
+| group_by | 44.7ms | 8.0ms | 5.6× |
+| filter_agg | 7.4ms | 2.5ms | 3.0× |
+| join | 331ms | 0.2ms | 1840× |
+
+**Status:** Active development. Core operators implemented. Architecture manifest enforces 16 invariants.
+
+## Slide 9: API Gateways
 **Title:** API Gateway Use Case
 
 **Features:**
@@ -91,7 +118,7 @@
 
 **ROI:** 80% CPU savings for Kong → $1M+ license potential
 
-## Slide 9: AI Cost
+## Slide 10: AI Cost
 **Title:** AI Cost Reduction
 
 **Benefits:**
@@ -101,7 +128,7 @@
 
 **ROI:** $50M+ annual savings at enterprise scale (100M records/day)
 
-## Slide 10: Defense
+## Slide 11: Defense
 **Title:** Defense Applications
 
 **Capabilities:**
@@ -116,7 +143,7 @@
 
 **ROI:** Gov contracts via VOSB edge; zero-trust compliance for defense data
 
-## Slide 11: Why $4.5M
+## Slide 12: Why $4.5M
 **Title:** Why $4.5M: Scaling to Multi-Product Licensing Lab
 
 **Capital Allocation (Pie Chart):**
@@ -130,7 +157,7 @@
 **Pro Forma:** $187K/month burn; ARR ramp to $10M Year 2
 **Validation:** Mentor call completed; demos tie to $4.5M value
 
-## Slide 12: GTM
+## Slide 13: GTM
 **Title:** Go-To-Market Strategy
 
 **Market Entry Plan:**
@@ -139,7 +166,7 @@
 - Year 1: $2M ARR from API licenses
 - Year 2: $10M ARR via multi-product expansion
 
-## Slide 13: Moat
+## Slide 14: Moat
 **Title:** Competitive Moat
 
 **Defensive Advantages:**
@@ -148,7 +175,7 @@
 - VOSB federal contracting edge
 - First-mover in JSON boundary intelligence
 
-## Slide 14: Team
+## Slide 15: Team
 **Title:** Team
 
 **Founder:** Mike Kuykendall
@@ -159,17 +186,17 @@
 **Hiring Plan:** 6 Rust experts Year 1 for parallel product development
 **Workload:** Budget for exec coach ($10K/year); 6-month personal runway secured
 
-## Slide 15: Demo Flat Scaling
+## Slide 16: Demo Flat Scaling
 **Title:** Demo: Flat Scaling
 
 **Demonstration of flat scaling capabilities**
 
-## Slide 16: Demo AI Gating
+## Slide 17: Demo AI Gating
 **Title:** Demo: AI Gating
 
 **Demonstration of AI gating functionality**
 
-## Slide 17: Demo Semantic Scan
+## Slide 18: Demo Semantic Scan
 **Title:** Demo: Semantic Scan
 
 **Demonstration of semantic scanning features**

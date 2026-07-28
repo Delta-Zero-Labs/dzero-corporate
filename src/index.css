@@ -128,4 +128,29 @@ All colors MUST be HSL.
   .print\\:pt-0 {
     padding-top: 0 !important;
   }
+
+  .print-container {
+    display: block;
+  }
+
+  .print-slide {
+    page-break-after: always;
+    break-after: page;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .print-slide:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  #slide-content {
+    overflow: visible !important;
+    height: auto !important;
+  }
 }
